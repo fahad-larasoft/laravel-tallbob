@@ -1,0 +1,33 @@
+{
+  "name": "fahad-larasoft/tallbob",
+  "description": "It handles Tallbob SMS via simple Facade",
+  "minimum-stability": "stable",
+  "keywords": [
+    "Laravel Tallbob",
+    "Tall Bob",
+    "PHP Tallbob",
+    "Fahad Ali"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/fahad-larasoft/laravel-tallbob",
+  "authors": [
+    {
+      "name": "Fahad Ali",
+      "email": "fahad@larasoft.io",
+      "homepage": "https://www.linkedin.com/in/fahad3",
+      "role": "Laravel Certified Developer"
+    }
+  ],
+  "require": {
+    "illuminate/support": "^8.0|^9.0|^10.0",
+    "php": "~5.6|~7.0|^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Larasoft\\TallBobSms\\": "src"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
