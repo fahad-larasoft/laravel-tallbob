@@ -2,7 +2,7 @@
 
 namespace Larasoft\TallBobSms\Tests;
 
-use Larasoft\TallBobSms\Facades\VidCorpSms;
+use Larasoft\TallBobSms\Facades\TallBobSms;
 use Larasoft\TallBobSms\ServiceProvider;
 use Orchestra\Testbench\TestCase;
 
@@ -16,7 +16,7 @@ class TallBobSmsTest extends TestCase
     protected function getPackageAliases($app)
     {
         return [
-            'vid-corp-sms' => VidCorpSms::class,
+            'tall-bob-sms' => TallBobSms::class,
         ];
     }
 

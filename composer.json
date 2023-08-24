@@ -33,7 +33,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Larasoft\\VidCorpSms\\Tests\\": "tests"
+      "Larasoft\\TallBobSms\\Tests\\": "tests"
     },
     "files": [
       "vendor/phpunit/phpunit/src/Framework/Assert/Functions.php"

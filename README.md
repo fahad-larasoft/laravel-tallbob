@@ -1,22 +1,12 @@
-# Vid Corp Sms
+# Tall Bob Sms
 
-[![Build Status](https://travis-ci.org/larasoft/vid-corp-sms.svg?branch=master)](https://travis-ci.org/larasoft/vid-corp-sms)
-[![styleci](https://styleci.io/repos/CHANGEME/shield)](https://styleci.io/repos/CHANGEME)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/larasoft/vid-corp-sms/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/larasoft/vid-corp-sms/?branch=master)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/CHANGEME/mini.png)](https://insight.sensiolabs.com/projects/CHANGEME)
-[![Coverage Status](https://coveralls.io/repos/github/larasoft/vid-corp-sms/badge.svg?branch=master)](https://coveralls.io/github/larasoft/vid-corp-sms?branch=master)
-
-[![Packagist](https://img.shields.io/packagist/v/larasoft/vid-corp-sms.svg)](https://packagist.org/packages/larasoft/vid-corp-sms)
-[![Packagist](https://poser.pugx.org/larasoft/vid-corp-sms/d/total.svg)](https://packagist.org/packages/larasoft/vid-corp-sms)
-[![Packagist](https://img.shields.io/packagist/l/larasoft/vid-corp-sms.svg)](https://packagist.org/packages/larasoft/vid-corp-sms)
-
-Package description: CHANGE ME
+Laravel Package to send SMS/MMS using Tall Bob API
 
 ## Installation
 
 Install via composer
 ```bash
-composer require larasoft/vid-corp-sms
+composer require fahad-larasoft/tallbob
 ```
 
 ### Register Service Provider
@@ -33,7 +23,7 @@ Larasoft\TallBobSms\ServiceProvider::class,
 
 Register package facade in `config/app.php` in `aliases` section
 ```php
-Larasoft\TallBobSms\Facades\VidCorpSms::class,
+Larasoft\TallBobSms\Facades\TallBobSms::class,
 ```
 
 ### Publish Configuration File
@@ -42,9 +32,55 @@ Larasoft\TallBobSms\Facades\VidCorpSms::class,
 php artisan vendor:publish --provider="Larasoft\TallBobSms\ServiceProvider" --tag="config"
 ```
 
+When published, the `config/tallbobsms.php` config file contains:
+
+```php
+return [
+    /**
+     * Sender Id to be sent with request
+     */
+    'sender_id' => env('TALLBOB_SENDER_ID', env('APP_NAME')),
+
+    /**
+     * API Username provided by Tall Bob for API
+     */
+    'api_username' => env('TALLBOB_API_USERNAME', ''),
+
+    /**
+     * API Key provided by Tall Bob for API
+     */
+    'api_key' => env('TALLBOB_API_KEY', ''),
+
+    /**
+     * To check if API is in test mode
+     */
+    'test_mode' => env('TALLBOB_TEST_MODE', false),
+];
+```
+
+You can change it according to your needs.
+
 ## Usage
 
-CHANGE ME
+* Send MMS
+```bash
+ TallBobSms::message($message)
+            ->senderId($sender_id)
+            ->number($mobile_number)    // with country code
+            ->subject($subject)
+            ->fileUrl($file_url)        // URL of file src
+            ->sendMMS();
+  ```
+
+* Send SMS
+```bash
+ TallBobSms::message($message)
+            ->senderId($sender_id)
+            ->number($mobile_number)    // with country code
+            ->send();
+  ```
+
+
 
 ## Security
 
@@ -52,9 +88,9 @@ If you discover any security related issues, please email
 instead of using the issue tracker.
 
 ## Credits
+- [Fahad Ali][link-author]
+- [All Contributors][link-contributors]
 
-- [](https://github.com/larasoft/vid-corp-sms)
-- [All contributors](https://github.com/larasoft/vid-corp-sms/graphs/contributors)
 
-This package is bootstrapped with the help of
-[melihovv/laravel-package-generator](https://github.com/melihovv/laravel-package-generator).
+[link-author]: https://www.linkedin.com/in/fahad3
+[link-contributors]: https://www.linkedin.com/in/fahad3/

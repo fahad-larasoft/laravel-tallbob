@@ -8,5 +8,5 @@
 Route::group([
     'namespace' => 'Larasoft\TallBobSms\Controllers'
 ], function () {
-    Route::post('/vidcorp/webhooks', 'VidCorpSmsController@webhook');
+    Route::post('/tallbob/webhooks', 'TallBobSmsController@webhook');
 });

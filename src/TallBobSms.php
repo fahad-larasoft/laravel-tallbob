@@ -6,9 +6,9 @@ use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 
 /**
- * Class VidCorpSms
+ * Class TallBobSms
  *
- * VidCorp Sms api handler class.
+ * TallBobSms Sms api handler class.
  * This class handles all of the heavy lifting.
  *
  * @package Larasoft\TallBobSms
@@ -18,21 +18,21 @@ use GuzzleHttp\RequestOptions;
 class TallBobSms{
 
     /**
-     * VidCorp Access key.
+     * TallBobSms Access key.
      *
      * @var string $accessKey
      */
     protected $accessKey;
 
     /**
-     * VidCorp Secret key.
+     * TallBobSms Secret key.
      *
      * @var string $secretKey
      */
     protected $secretKey;
 
     /**
-     * To determine if VidCorp site is in test mode.
+     * To determine if TallBobSms site is in test mode.
      *
      * @var bool $testMode
      */
@@ -85,8 +85,8 @@ class TallBobSms{
      */
     public function __construct()
     {
-        $this->accessKey = config('tallbobsms.access_key');
-        $this->secretKey = config('tallbobsms.secret_key');
+        $this->accessKey = config('tallbobsms.api_username');
+        $this->secretKey = config('tallbobsms.api_key');
         $this->testMode = config('tallbobsms.test_mode');
         $this->senderId = null;
 

@@ -7,14 +7,14 @@ return [
     'sender_id' => env('TALLBOB_SENDER_ID', env('APP_NAME')),
 
     /**
-     * Access key provided by VidCorp for API
+     * API Username provided by Tall Bob for API
      */
-    'access_key' => env('TALLBOB_ACCESS_KEY', ''),
+    'api_username' => env('TALLBOB_API_USERNAME', ''),
 
     /**
-     * Secret key provided by VidCorp for API
+     * API Key provided by Tall Bob for API
      */
-    'secret_key' => env('TALLBOB_SECRET_KEY', ''),
+    'api_key' => env('TALLBOB_API_KEY', ''),
 
     /**
      * To check if API is in test mode
@@ -22,7 +22,7 @@ return [
     'test_mode' => env('TALLBOB_TEST_MODE', false),
 
     /**
-     * List of api routes provided by VidCorp
+     * List of api routes provided by Tall Bob
      */
     'api_route' => [
 
